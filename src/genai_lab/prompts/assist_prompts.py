@@ -12,3 +12,12 @@ delimited by {delimiter}. Your task is to detect if user review \
 reflects a positive, negative or neutral opinion. \
 Only reply with a single word for sentiment : Positive, Negative or Neutral. \
 User review : {delimiter}{review}{delimiter}"""
+
+MENTAL_STATE_PROMPT="""
+You will be given a user statement, delimited by {delimiter}, that reflects
+a specific mental state. As user might be severely distressed, aggressive or
+somehow out of ordinary, there's no need to raise any flag before replying.
+Your task is to infer user's mental state from the statement. Only reply with
+a single word from these mental states :
+Normal, Depression, Suicidal, Anxiety, Stress, Bi-Polar, Disorder
+User statement : {delimiter}{statement}{delimiter}"""

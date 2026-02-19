@@ -21,3 +21,28 @@ This was a dreadful, boring movie, even for a documentary. At times, it did prov
 and also had humorous moments, but overall it was not worth seeing. Every time I began to feel
 sympathetic towards Mark and began to hope he would be successful, I would become disappointed by his
 lack of responsibility and drug and alcohol abuse."""
+
+SAMPLE_STATEMENT_1 = """
+I am just fed up of everything. Everything and everyone pisses me off and I have tried
+to be happy but that just does not work. I have made plans of suicide for sometime after
+i pass my driving test and get a car. Its the only thing i can think of, I have tried self
+harm but I am too scared of pain, thought about jumping off a building like my brother tried
+but I am a coward and anything else is too painful or I am scared to do it. I know I have not
+passed my gcses because i did not try so I probably will not be able to get into college,
+I am so negative to everyone around me I am scared I am losing friends. Everything about me
+is just a fucking waste, anyone else could have been born in my place and done better, children
+are dying in impoverished countries who could have had great potential but people like me were
+born who are selfish and useless. I do not know what to title this"""
+
+SAMPLE_STATEMENT_2 = """
+I cannot take it anymore. I tried all the advice. I tried reaching out.
+It does not change the fact that I just do not belong. I am so sorry.
+I think it is the end"""
+
+SAMPLE_STATEMENT_3 = """
+Public speaking tips? Hi, all. I have to give a presentation at work next week
+(45 minutes long and the CEO will be in attendance). I’m already panicking,
+as once the anxiety kicks in, I’m certain I’m going to forget everything I’m
+supposed to say. (anxiety makes it very difficult for me to focus on anything)
+Does anyone have any speaking tips that have worked for them in the past?
+Thanks so much!"""

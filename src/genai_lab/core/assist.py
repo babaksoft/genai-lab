@@ -1,5 +1,6 @@
 from ..config import config
 from ..prompts.assist_prompts import SUMMARY_PROMPT, SENTIMENT_PROMPT
+from ..prompts.assist_prompts import MENTAL_STATE_PROMPT
 from ..setup import get_completion
 
 def summarize_text(
@@ -106,5 +107,57 @@ def sentiment_demo():
     print(f"Sentiment : {sentiment} ({'Correct' if correct else 'Incorrect'})")
 
 
+def classify_mental_state(
+    statement: str,
+    delimiter: str=config.DELIMITER,
+    max_input_len: int=config.MAX_INPUT_LEN,
+    model: str=config.DEF_GPT_MODEL
+) -> str | None:
+    """ Uses given GPT model to classify mental state from a user-supplied statement. """
+
+    if not statement:
+        raise ValueError(
+            "[ERROR] Value for 'statement' cannot be None or empty string.")
+
+    input_len = len(statement)
+    if input_len > max_input_len:
+        print(f"[WARN] This feature accepts maximum length of {max_input_len}"
+              f" for user statement, but a statement with length {input_len} "
+              f"was given.\nLong statements will be truncated.")
+        statement = statement[:max_input_len]
+
+    prompt = MENTAL_STATE_PROMPT.format(
+        delimiter=delimiter, statement=statement
+    )
+    response = get_completion(
+        prompt, model=model, max_output_tokens=20
+    )
+
+    return response
+
+
+def mental_state_demo():
+    statement_1 = config.SAMPLE_STATEMENT_1
+    state_1 = "Depression"
+    state = classify_mental_state(statement_1)
+    correct = state == state_1
+    print(statement_1)
+    print(f"Mental State : {state} ({'Correct' if correct else 'Incorrect'})")
+
+    statement_2 = config.SAMPLE_STATEMENT_2
+    state_2 = "Suicidal"
+    state = classify_mental_state(statement_2)
+    correct = state == state_2
+    print(statement_2)
+    print(f"Mental State : {state} ({'Correct' if correct else 'Incorrect'})")
+
+    statement_3 = config.SAMPLE_STATEMENT_3
+    state_3 = "Anxiety"
+    state = classify_mental_state(statement_3)
+    correct = state == state_3
+    print(statement_3)
+    print(f"Mental State : {state} ({'Correct' if correct else 'Incorrect'})")
+
+
 if __name__ == "__main__":
-    sentiment_demo()
+    mental_state_demo()
