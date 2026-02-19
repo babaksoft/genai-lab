@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "genai-lab"
+version = "0.1.0"
+description = "ML Package for my first end-to-end Generative AI app"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+  { name="babaksoft", email="babak.eslamieh@gmail.com" },
+]
+keywords = ["machine learning"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license-files = ["LICEN[CS]E*"]
+
+dependencies = [
+"openai==2.21.0",
+"python-dotenv==1.2.1",
+"click==8.3.1",
+"jupyterlab==4.5.4",
+"notebook==7.5.3",
+"SQLAlchemy==2.0.46",
+"psycopg2-binary==2.9.11",
+"fastapi==0.129.0",
+"streamlit==1.54.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/babaksoft/genai-lab"
+Issues = "https://github.com/babaksoft/genai-lab/issues"
+
+[project.optional-dependencies]
+build = ["build"]
+dev = ["pytest"]
+
+[tool.hatch.build]
+exclude = [
+    "**/.gitignore",
+    "/notebooks",
+    "/tests",
+    ".gitignore",
+    "requirements.txt"
+]
