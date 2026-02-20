@@ -110,3 +110,15 @@ it again and find out?
 
 Cheers,
 Brian"""
+
+SAMPLE_ERROR_1 = """
+Detected package version outside of dependency constraint:
+Microsoft.CodeAnalysis.CSharp.Workspaces 4.5.0 requires
+Microsoft.CodeAnalysis.Common (= 4.5.0) but version
+Microsoft.CodeAnalysis.Common 4.8.0 was resolved."""
+
+SAMPLE_ERROR_2 = """
+The INSERT statement conflicted with the FOREIGN KEY constraint
+"FK_Contact_Person_Auth_User". The conflict occurred in database
+"NGTadbirSys", table "Auth.User", column "UserId".
+The statement has been terminated."""

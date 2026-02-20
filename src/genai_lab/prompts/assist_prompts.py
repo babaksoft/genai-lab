@@ -45,3 +45,21 @@ the reason.
 
 User text : {delimiter}{text}{delimiter}
 Context : {context}"""
+
+EXPLAIN_PROMPT = """
+You will be given an error message, delimited by {delimiter}, which
+can be related to a broad range of technical areas related to IT
+(i.e. Information Technology). User may or may not give you extra
+contextual information, that better explains the exact situation in
+which error has happened.
+
+The error context is specified after the error message. If the context
+is a single generic phrase or abbreviation (e.g. Unavailable, N/A,
+Unknown, etc.) try your best to be as helpful as you can. Otherwise,
+use given context to provide more accurate and/or helpful explanations.
+
+Keep you response under {max_words} words.
+
+Error message : {delimiter}{message}{delimiter}
+Context : {context}
+"""

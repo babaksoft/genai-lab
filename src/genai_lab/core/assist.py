@@ -3,7 +3,7 @@ from textwrap import wrap
 from ..config import config
 from ..prompts.assist_prompts import SUMMARY_PROMPT, SENTIMENT_PROMPT
 from ..prompts.assist_prompts import MENTAL_STATE_PROMPT, TRANSLATE_PROMPT
-from ..prompts.assist_prompts import REWRITE_PROMPT
+from ..prompts.assist_prompts import REWRITE_PROMPT, EXPLAIN_PROMPT
 from ..setup import get_completion
 
 
@@ -289,5 +289,56 @@ def rewrite_demo():
     print(response)
 
 
+def explain_error(
+    message: str,
+    context: str="Unknown",
+    max_input_len: int=1000,
+    max_words: int=200,
+    model=config.DEF_GPT_MODEL) -> str | None:
+
+    if not message:
+        raise ValueError("[ERROR] Value for 'message' cannot be None or empty string.")
+
+    input_len = len(message)
+    if input_len > max_input_len:
+        print(f"[WARN] This feature accepts maximum length of {max_input_len} "
+              f"for error message, but a message with length {input_len} was "
+              f"given.\nMessage will be truncated.")
+        message = message[:max_input_len]
+
+    max_output_tokens = int(max_words * 4. / 3)
+    prompt = EXPLAIN_PROMPT.format(
+        delimiter=config.DELIMITER, message=message,
+        context=context, max_words=max_words
+    )
+    response = get_completion(
+        prompt, model=model, max_output_tokens=max_output_tokens
+    )
+
+    return response
+
+
+def explain_demo():
+    err_message = config.SAMPLE_ERROR_1
+    context = "I'm building a Visual Studio 2022 solution with C# .NET 8.0 compiler."
+    response = explain_error(
+        message=err_message, context=context
+    )
+
+    print(f"\nError message :\n{err_message}")
+    print(f"Context : {context}")
+    print(f"\nExplanation (from LLM) :")
+    print(response)
+
+    err_message = config.SAMPLE_ERROR_2
+    response = explain_error(message=err_message)
+    context = None
+
+    print(f"\nError message :\n{err_message}")
+    print(f"Context : {context}")
+    print(f"\nExplanation (from LLM) :")
+    print(response)
+
+
 if __name__ == "__main__":
-    rewrite_demo()
+    explain_demo()
