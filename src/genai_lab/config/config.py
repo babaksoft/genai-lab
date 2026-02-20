@@ -46,3 +46,33 @@ as once the anxiety kicks in, I’m certain I’m going to forget everything I�
 supposed to say. (anxiety makes it very difficult for me to focus on anything)
 Does anyone have any speaking tips that have worked for them in the past?
 Thanks so much!"""
+
+SAMPLE_TEXT_1 = """
+My mind rebels at stagnation. Give me problems, give me work,
+give me the most abstruse cryptogram, or the most intricate analysis,
+and I am in my own proper atmosphere. But I abhor the dull routine
+of existence. I crave for mental exaltation.
+
+Arthur Conan Doyle"""
+
+SAMPLE_TRANS_1 = """
+Mon esprit se rebelle face à la stagnation. Donnez-moi des problèmes,
+donnez-moi du travail, donnez-moi le cryptogramme le plus abscons,
+ou l'analyse la plus complexe, et je suis dans ma propre atmosphère.
+Mais je déteste la routine ennuyeuse d'exister. J'ai soif d'exaltation mentale. 
+
+Arthur Conan Doyle"""
+
+SAMPLE_TEXT_2 = """
+Ci sono pittori che trasformano il sole in una macchia gialla,
+ma ce ne sono altri che con l'aiuto della loro arte e della loro
+intelligenza trasformano una macchia gialla in sole.
+
+Pablo Picasso"""
+
+SAMPLE_TRANS_2 = """
+There are painters who transform the sun to a yellow spot, but there are
+others who with the help of their art and their intelligence, transform
+a yellow spot into sun.
+
+Pablo Picasso"""

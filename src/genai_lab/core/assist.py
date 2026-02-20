@@ -1,7 +1,10 @@
+from textwrap import wrap
+
 from ..config import config
 from ..prompts.assist_prompts import SUMMARY_PROMPT, SENTIMENT_PROMPT
-from ..prompts.assist_prompts import MENTAL_STATE_PROMPT
+from ..prompts.assist_prompts import MENTAL_STATE_PROMPT, TRANSLATE_PROMPT
 from ..setup import get_completion
+
 
 def summarize_text(
     text: str,
@@ -159,5 +162,73 @@ def mental_state_demo():
     print(f"Mental State : {state} ({'Correct' if correct else 'Incorrect'})")
 
 
+def clean_text(text: str, max_len: int):
+    """ Shortens a possibly long input text, up to the last
+    complete sentence. If the text length does not exceed
+    given maximum length, original text is returned. """
+
+    if len(text) <= max_len:
+        return text
+
+    trunc_text = text[:max_len]
+    idx_stop = trunc_text.rfind(".")
+    idx_qm = trunc_text.rfind("?")
+    idx_excl = trunc_text.rfind("!")
+    idx_max = sorted([idx_stop, idx_qm, idx_excl], reverse=True)[0]
+
+    return trunc_text[:idx_max+1]
+
+
+def translate(
+    text: str,
+    max_input_len: int=2000,
+    to_lang: str="English",
+    model: str=config.DEF_GPT_MODEL) -> str:
+    """ Uses given GPT model to translate user text to a target language.
+    Model is asked to automatically detect source language. """
+
+    if not text:
+        raise ValueError("[ERROR] Value for 'text' cannot be None or empty string.")
+
+    truncated = text
+    input_len = len(text)
+    if input_len > max_input_len:
+        print(f"[WARN] This feature accepts maximum length of {max_input_len} "
+              f"for user text, but a text with length {input_len} was given."
+              f"\nLong texts will be truncated to the longest complete text "
+              f"shorter than {max_input_len} characters.")
+        truncated = clean_text(text, max_len=max_input_len)
+
+    max_words = int(5000 * 3. / 4)
+    prompt = TRANSLATE_PROMPT.format(
+        delimiter=config.DELIMITER, text=truncated, language=to_lang, max_words=max_words
+    )
+    response = get_completion(
+        prompt, model=model, max_output_tokens=5000
+    )
+
+    return response
+
+
+def translate_demo():
+    trans_1 = translate(config.SAMPLE_TEXT_1, to_lang="French")
+    lines = wrap(trans_1, width=80)
+    trans_1 = "\n".join(lines)
+
+    print(f"Original text :{config.SAMPLE_TEXT_1}\n")
+    print(f"Translation (Google) :{config.SAMPLE_TRANS_1}\n")
+    print(f"Translation (GPT) :")
+    print(trans_1)
+
+    trans_2 = translate(config.SAMPLE_TEXT_2, to_lang="English")
+    lines = wrap(trans_2, width=80)
+    trans_2 = "\n".join(lines)
+
+    print(f"\nGoogle text (Italian) :{config.SAMPLE_TEXT_2}\n")
+    print(f"Original text :{config.SAMPLE_TRANS_2}\n")
+    print(f"Translation (GPT) :")
+    print(trans_2)
+
+
 if __name__ == "__main__":
-    mental_state_demo()
+    translate_demo()
