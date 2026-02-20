@@ -76,3 +76,37 @@ others who with the help of their art and their intelligence, transform
 a yellow spot into sun.
 
 Pablo Picasso"""
+
+SAMPLE_MAIL_1 = """
+Hello Mr. Colbert,
+
+Thinking about your offer, I'm afraid it doesn't make my ends meet in
+the long run : Payment is a little low and I'm sure I can find better
+offers if I try. Thanks for the opportunity and best of luck.
+
+Regards,
+Barry Rosenfield"""
+
+SAMPLE_MAIL_2 = """
+To whom it may concern,
+
+First, let me thank you for the time you allocated for my visa interview.
+I think I had a perfectly valid and strong case, and I'd like to know why
+my visa application was denied.
+
+If it helps, I've aspired to be a Swedish citizen for quite some time and
+will strive to serve my new country any other chance I may be approved.
+
+God bless the king,
+Marvin Hackley, Jr."""
+
+SAMPLE_MAIL_3 = """
+Hey Emma,
+
+How's it going? You know what, I'm still having this buzz, you know,
+from the last time we were together at the party. That was awesome,
+baby. I think there may be something we can explore. How about we do
+it again and find out?
+
+Cheers,
+Brian"""

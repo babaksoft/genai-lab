@@ -3,6 +3,7 @@ from textwrap import wrap
 from ..config import config
 from ..prompts.assist_prompts import SUMMARY_PROMPT, SENTIMENT_PROMPT
 from ..prompts.assist_prompts import MENTAL_STATE_PROMPT, TRANSLATE_PROMPT
+from ..prompts.assist_prompts import REWRITE_PROMPT
 from ..setup import get_completion
 
 
@@ -230,5 +231,63 @@ def translate_demo():
     print(trans_2)
 
 
+def change_tone(
+    text: str,
+    max_input_len: int=1000,
+    context: str="Business",
+    model: str=config.DEF_GPT_MODEL) -> str:
+    """ Uses given GPT model to rewrite user text with a desired tone.
+    Model is asked to politely refuse the request if the tone is unsupported. """
+
+    if not text:
+        raise ValueError(
+            "[ERROR] Value for 'text' cannot be None or empty string.")
+
+    truncated = text
+    input_len = len(text)
+    if input_len > max_input_len:
+        print(f"[WARN] This feature accepts maximum length of "
+              f"{max_input_len} for user text, but a text with "
+              f"length {input_len} was given.\nLong texts will be "
+              f"truncated to the longest complete text less than "
+              f"{max_input_len} characters.")
+        truncated = clean_text(text, max_len=max_input_len)
+
+    max_output_tokens = 5000
+    temperature = 0.3
+    max_words = int(max_output_tokens * 3. / 4)
+    prompt = REWRITE_PROMPT.format(
+        delimiter=config.DELIMITER, text=truncated,
+        context=context, max_words=max_words
+    )
+    response = get_completion(
+        prompt, model=model, max_output_tokens=max_output_tokens,
+        temperature=temperature
+    )
+
+    return response
+
+
+def rewrite_demo():
+    # Polite letter someone writes to ask why their visa was declined
+    sample_mail = config.SAMPLE_MAIL_2
+    context="Official"
+    response = change_tone(sample_mail, context=context)
+    print(f"\nOriginal mail :\n{sample_mail}")
+    print(f"New context : {context}")
+    print(f"\nAdapted mail (from LLM) :")
+    print(response)
+
+    # A casual mail with an invalid context LLM is expected to reject
+    # (but it doesn't!)
+    sample_mail = config.SAMPLE_MAIL_3
+    context="Flirtatious"
+    response = change_tone(sample_mail, context=context)
+    print(f"\nOriginal mail :\n{sample_mail}")
+    print(f"New context : {context}")
+    print(f"\nAdapted mail (from LLM) :")
+    print(response)
+
+
 if __name__ == "__main__":
-    translate_demo()
+    rewrite_demo()
