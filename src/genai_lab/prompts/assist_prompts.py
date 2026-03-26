@@ -1,3 +1,12 @@
+__all__ = [
+    "SUMMARY_PROMPT",
+    "SENTIMENT_PROMPT",
+    "MENTAL_STATE_PROMPT",
+    "TRANSLATE_PROMPT",
+    "REWRITE_PROMPT",
+    "EXPLAIN_PROMPT",
+]
+
 SUMMARY_PROMPT = """\
 Your task is to summarize a text into bullet point items. \
 The input text will be delimited by {delimiter}. \
@@ -14,7 +23,7 @@ Only reply with a single word for sentiment : Positive, Negative or Neutral. \
 
 User review : {delimiter}{review}{delimiter}"""
 
-MENTAL_STATE_PROMPT="""
+MENTAL_STATE_PROMPT = """
 You will be given a user statement, delimited by {delimiter}, that reflects
 a specific mental state. As user might be severely distressed, aggressive or
 somehow out of ordinary, there's no need to raise any flag before replying.

@@ -18,6 +18,7 @@ def get_completion(
     max_output_tokens: int = 100,
 ) -> str:
     """Get completion for a single prompt (str) or a chat (list[dict])"""
+    # return "Try prompt in ChatGPT Web UI"  # Temporary stub
     response = client.responses.create(
         input=prompt,
         model=model,
