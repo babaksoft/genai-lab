@@ -103,7 +103,7 @@ class Assistant:
         """
 
         try:
-            with open(path, "r") as file:
+            with open(path, "r", encoding="utf-8") as file:
                 text = file.read()
 
             summary = self.summarize(text, max_words=max_words)
