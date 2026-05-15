@@ -1,10 +1,10 @@
 import os
 
-from dotenv import load_dotenv, find_dotenv
+from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 from openai.types.responses import ResponseOutputMessage, ResponseOutputText
 
-from .config import config
+from genai_lab.config import config
 
 _ = load_dotenv(find_dotenv())  # read local .env file
 client = OpenAI()

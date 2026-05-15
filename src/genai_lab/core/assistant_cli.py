@@ -31,7 +31,7 @@ def cli():
     default=100,
     help="Maximum number of words in file content summary (default : 100)",
 )
-def shorten(file: str | PathLike, max_words: int = 100):
+def shorten(file: str | PathLike, max_words: int = 100) -> None:
     summary = assistant.summarize_file(file, max_words)
     word_count = len(summary.split(" "))
     print(f"\nSummary :\n{summary}")
@@ -44,7 +44,7 @@ def shorten(file: str | PathLike, max_words: int = 100):
     "-r",
     help="User review whose sentiment should be detected (20,000 characters max.)",
 )
-def sentiment(review: str):
+def sentiment(review: str) -> None:
     ai_sentiment = assistant.get_sentiment(review)
     print(f"Sentiment : {ai_sentiment}")
 
@@ -55,7 +55,7 @@ def sentiment(review: str):
     "-t",
     help="User text whose mood should be detected (20,000 characters max.)",
 )
-def mood(text: str):
+def mood(text: str) -> None:
     ai_mood = assistant.get_mental_state(text)
     print(f"Mood : {ai_mood}")
 
@@ -75,7 +75,7 @@ def mood(text: str):
     default="English",
     help="Target language for translation (default : English)",
 )
-def translate(text: str, to_lang: str = "English"):
+def translate(text: str, to_lang: str = "English") -> None:
     translated = assistant.translate(text, to_lang)
     print(f"{to_lang.title()} translation :\n{translated}")
 
@@ -93,7 +93,7 @@ def translate(text: str, to_lang: str = "English"):
     help="Context or tone that given text should be adapted to."
     " Supported contexts : business, official, friendly, childish (default : business)",
 )
-def adapt(text: str, context: str = "business"):
+def adapt(text: str, context: str = "business") -> None:
     adapted = assistant.change_tone(text, context)
     print(f"Adapted to {context.lower()} tone :\n{adapted}")
 
@@ -119,7 +119,7 @@ def adapt(text: str, context: str = "business"):
     default=200,
     help="Maximum number of words in error explanation (default : 200)",
 )
-def explain(message: str, context: str = "Unknown", max_words: int = 200):
+def explain(message: str, context: str = "Unknown", max_words: int = 200) -> None:
     explained = assistant.explain_error(message, context, max_words)
     print(f"AI Explanation :\n{explained}")
 

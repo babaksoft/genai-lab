@@ -2,10 +2,10 @@
 
 from os import PathLike
 
-from ..setup import get_completion
-from ..config import config
-from ..prompts.assist_prompts import *
-from .assistant_utils import TextParam, validate_params, clean_text
+from genai_lab.config import config
+from genai_lab.core.assistant_utils import TextParam, clean_text, validate_params
+from genai_lab.prompts.assist_prompts import *
+from genai_lab.setup import get_completion
 
 _model = config.DEF_GPT_MODEL
 _delimiter = config.DELIMITER
