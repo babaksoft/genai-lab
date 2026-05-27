@@ -30,6 +30,7 @@ dependencies = [
     "fastapi",
     "ipykernel",
     "langchain",
+    "langchain-openai",
     "llama-index",
     "openai",
     "psycopg2-binary",

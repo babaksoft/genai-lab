@@ -1,0 +1,184 @@
+
+===================================================================
+Simple conversation demo using LangChain and GPT models
+Objective: Inspect token usage, latency and response consistency
+
+Model: gpt-4o-mini
+===================================================================
+
+=== Iteration 1 ===
+Current dialog:
+Token count (input, estimated): 51
+[User]:
+What are the official states in France?
+
+[GPT]:
+France is divided into several administrative divisions, including:
+
+1. **Metropolitan France** (the mainland and coastal islands):
+   - 13 regions (e.g., Île-de-France, Provence-Alpes-Côte d'Azur)
+   - 96 departments (e.g., Paris, Bouches-du-Rhône)
+
+2. **Overseas France**:
+   - 5 overseas regions (e.g., Guadeloupe, Réunion)
+   - Several overseas collectivities and territories (e.g., French Polynesia, Saint Pierre and Miquelon)
+
+These regions and departments serve as the official administrative divisions of France.
+
+Token count (total, estimated): 181
+Token count (actual):
+  Input:  52
+  Output: 126
+  Total:  178
+Latency: 0:00:06.190455
+
+Current dialog:
+Token count (input, estimated): 195
+[User]:
+Which state is a better place to live in?
+
+[GPT]:
+The best place to live in France depends on personal preferences and priorities. Here are a few considerations for different regions:
+
+1. **Île-de-France (Paris)**: Offers cultural attractions, job opportunities, and vibrant city life, but can be expensive and crowded.
+
+2. **Provence-Alpes-Côte d'Azur**: Known for its beautiful landscapes, Mediterranean climate, and relaxed lifestyle, ideal for those who enjoy nature and outdoor activities.
+
+3. **Brittany**: Offers a unique culture, beautiful coastline, and a slower pace of life, appealing to those who prefer a rural setting.
+
+4. **Auvergne-Rhône-Alpes**: Great for outdoor enthusiasts, with access to the Alps and a mix of urban and rural living.
+
+5. **Nouvelle-Aquitaine**: Known for its wine regions, beaches, and a more affordable cost of living.
+
+Ultimately, the best region depends on individual lifestyle preferences, job opportunities, climate, and cultural interests.
+
+Token count (total, estimated): 397
+Token count (actual):
+  Input:  196
+  Output: 198
+  Total:  394
+Latency: 0:00:05.417806
+
+=== Iteration 2 ===
+Current dialog:
+Token count (input, estimated): 51
+[User]:
+What are the official states in France?
+
+[GPT]:
+France is divided into 18 administrative regions, which include 13 regions in metropolitan France and 5 overseas regions. The 13 regions in metropolitan France are:
+
+1. Auvergne-Rhône-Alpes
+2. Bourgogne-Franche-Comté
+3. Brittany (Bretagne)
+4. Centre-Val de Loire
+5. Grand Est
+6. Hauts-de-France
+7. Île-de-France
+8. Normandy (Normandie)
+9. Nouvelle-Aquitaine
+10. Occitanie
+11. Pays de la Loire
+12. Provence-Alpes-Côte d'Azur
+13. Corsica (Corse)
+
+The 5 overseas regions are:
+
+1. Guadeloupe
+2. Martinique
+3. French Guiana (Guyane)
+4. Réunion
+5. Mayotte
+
+These regions serve as the highest administrative divisions in France.
+
+Token count (total, estimated): 233
+Token count (actual):
+  Input:  52
+  Output: 178
+  Total:  230
+Latency: 0:00:04.196053
+
+Current dialog:
+Token count (input, estimated): 247
+[User]:
+Which state is a better place to live in?
+
+[GPT]:
+The best place to live in France depends on individual preferences and priorities, such as lifestyle, climate, job opportunities, and cultural interests. 
+
+- **Île-de-France (Paris)**: Offers vibrant city life, cultural attractions, and job opportunities, but can be expensive and crowded.
+- **Provence-Alpes-Côte d'Azur**: Known for its beautiful landscapes, Mediterranean climate, and relaxed lifestyle.
+- **Brittany**: Offers a coastal lifestyle with rich culture and history, known for its seafood and scenic views.
+- **Nouvelle-Aquitaine**: Features diverse landscapes, including beaches and vineyards, and a more affordable cost of living.
+
+Consider what factors are most important to you when determining the best region to live in.
+
+Token count (total, estimated): 401
+Token count (actual):
+  Input:  248
+  Output: 150
+  Total:  398
+Latency: 0:00:03.171117
+
+=== Iteration 3 ===
+Current dialog:
+Token count (input, estimated): 51
+[User]:
+What are the official states in France?
+
+[GPT]:
+France is divided into several administrative divisions, including:
+
+1. **Metropolitan France** (the mainland and coastal islands):
+   - 13 regions (e.g., Île-de-France, Provence-Alpes-Côte d'Azur)
+   - 96 departments (e.g., Paris, Bouches-du-Rhône)
+
+2. **Overseas France**:
+   - 5 overseas regions (e.g., Guadeloupe, Réunion)
+   - Several overseas collectivities and territories (e.g., French Polynesia, Saint Pierre and Miquelon)
+
+These regions and departments serve as the official administrative divisions of France.
+
+Token count (total, estimated): 181
+Token count (actual):
+  Input:  52
+  Output: 126
+  Total:  178
+Latency: 0:00:03.171302
+
+Current dialog:
+Token count (input, estimated): 195
+[User]:
+Which state is a better place to live in?
+
+[GPT]:
+The best place to live in France depends on personal preferences and priorities. Here are a few considerations for different regions:
+
+1. **Île-de-France (Paris)**: Offers cultural attractions, job opportunities, and vibrant city life, but can be expensive and crowded.
+
+2. **Provence-Alpes-Côte d'Azur**: Known for its beautiful landscapes, Mediterranean climate, and relaxed lifestyle, ideal for those who enjoy nature and outdoor activities.
+
+3. **Brittany**: Offers a unique culture, beautiful coastline, and a slower pace of life, appealing to those who prefer a rural setting.
+
+4. **Auvergne-Rhône-Alpes**: Great for outdoor enthusiasts, with access to the Alps and a mix of urban and rural living.
+
+5. **Nouvelle-Aquitaine**: Known for its wine regions, beautiful countryside, and a more affordable cost of living.
+
+Ultimately, the best region depends on factors like job opportunities, lifestyle preferences, climate, and cost of living.
+
+Token count (total, estimated): 400
+Token count (actual):
+  Input:  196
+  Output: 201
+  Total:  397
+Latency: 0:00:04.298626
+
+
+=== Consistency Scores ===
+Message : What are the official states in France?
+LLM Response Consistency: 0.9380
+Message : Which state is a better place to live in?
+LLM Response Consistency: 0.9754
+
+Average Latency: 4.4076
