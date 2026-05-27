@@ -1,7 +1,6 @@
 import asyncio
 
 from dotenv import load_dotenv
-from llama_index.core.agent.workflow import FunctionAgent
 from llama_index.core.llms import ChatMessage, TextBlock, ImageBlock
 from llama_index.llms.openai import OpenAI
 
