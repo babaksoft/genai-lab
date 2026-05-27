@@ -27,9 +27,11 @@ agent = FunctionAgent(
 
 async def simple_task():
     message = "Today is 25 May 2026. What are my lowest-priority tasks for the next 7 days?"
-    print("[User]:\n", message)
+    print("[User]:\n")
+    print(message)
     response = await agent.run(user_msg=message)
-    print("[GPT]:\n", response)
+    print("[GPT]:\n")
+    print(response)
 
 
 if __name__ == "__main__":
