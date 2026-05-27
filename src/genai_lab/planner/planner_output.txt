@@ -1,0 +1,67 @@
+First Run
+============
+[User]:
+ What's in my TODO list for today?
+[GPT]:
+It looks like there are no tasks specifically due for today. However, here are the tasks that are coming up soon:
+
+1. **Meet Emma in coffeeshop**
+   - **Priority:** 1
+   - **Duration:** 3.0 hours
+   - **Deadline:** May 25, 2026, at 16:00
+
+2. **Add unit tests for data pipeline in project Y**
+   - **Priority:** 2
+   - **Duration:** 5.0 hours
+   - **Deadline:** May 26, 2026
+
+3. **Review PR #4567 in XYZ repo**
+   - **Priority:** 1
+   - **Duration:** 4.5 hours
+   - **Deadline:** May 26, 2026
+
+4. **Read chapter 7 of MLOps book**
+   - **Priority:** 2
+   - **Duration:** 6.0 hours
+   - **Deadline:** May 27, 2026
+
+5. **Implement simple monitoring for project X**
+   - **Priority:** 1
+   - **Duration:** 4.0 hours
+   - **Deadline:** May 28, 2026
+
+If you need to focus on any specific tasks or need help with planning, let me know!
+
+Second Run
+===========
+[User]:
+ What are my tomorrow tasks?
+[GPT]:
+It looks like there are no tasks scheduled for tomorrow, October 6, 2023. If you need assistance with anything else, feel free to ask!
+
+Third Run
+==========
+[User]:
+ Today is 25 May 2026. What's on my TODO list for today?
+[GPT]:
+You have one task on your TODO list for today:
+
+- **Title:** Meet Emma in coffeeshop
+- **Priority:** High (1)
+- **Duration:** 3 hours
+- **Deadline:** Today at 4:00 PM
+
+Fourth Run
+===========
+[User]:
+ Today is 25 May 2026. What are my tasks for tomorrow?
+[GPT]:
+You have the following tasks for tomorrow, 26 May 2026:
+
+1. **Add unit tests for data pipeline in project Y**
+   - Priority: 2
+   - Duration: 5.0 hours
+
+2. **Review PR #4567 in XYZ repo**
+   - Priority: 1
+   - Duration: 4.5 hours
