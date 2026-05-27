@@ -29,6 +29,8 @@ dependencies = [
     "click",
     "fastapi",
     "ipykernel",
+    "langchain",
+    "llama-index",
     "openai",
     "psycopg2-binary",
     "python-dotenv",
