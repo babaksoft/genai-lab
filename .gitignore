@@ -5,6 +5,9 @@ __pycache__/
 .ruff_cache
 .idea/
 
+# Non-project files and notes
+reflections.txt
+
 # Common virtual environment and Jupyter notebook stuff
 .ipynb_checkpoints/
 .venv/
