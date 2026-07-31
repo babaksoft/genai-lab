@@ -5,9 +5,9 @@ build-backend = "hatchling.build"
 [project]
 name = "genai-lab"
 version = "0.1.0"
-description = "ML Package for my first end-to-end Generative AI app"
+description = "Experimenting with Generative AI Ideas"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = "MIT"
 authors = [
   { name="babaksoft", email="babak.eslamieh@gmail.com" },
@@ -15,9 +15,7 @@ authors = [
 keywords = ["machine learning"]
 classifiers = [
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3 :: Only",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
@@ -25,19 +23,29 @@ classifiers = [
 license-files = ["LICEN[CS]E*"]
 
 dependencies = [
-    "chromadb",
+    "alembic",
+    "arize-phoenix",
     "click",
-    "fastapi",
-    "ipykernel",
-    "langchain",
-    "langchain-openai",
+    "fastapi[standard]",
+    "langfuse",
+    "llama-agents",
     "llama-index",
+    "llama-index-callbacks-arize-phoenix",
+    "llama-index-embeddings-openai",
+    "llama-index-llms-ollama",
+    "llama-index-llms-openai",
+    "llama-index-utils-workflow",
+    "llama-index-vector-stores-postgres",
+    "ollama",
     "openai",
-    "psycopg2-binary",
+    "openinference-instrumentation-llama-index",
+    "pgvector",
+    "psycopg2",
     "python-dotenv",
-    "sentence-transformers",
+    "requests",
     "SQLAlchemy",
     "streamlit",
+    "tiktoken",
 ]
 
 [project.urls]
@@ -58,8 +66,19 @@ dev = [
     "ruff",
 ]
 
+[tool.black]
+target-version = ["py312"]
+
 [tool.isort]
 profile = "black"
+known_third_party = [
+    "alembic",
+    "sqlalchemy",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
 
 [tool.hatch.build]
 sources = ["src"]
