@@ -7,4 +7,4 @@ MAX_INPUT_L = 20000
 MAX_INPUT_M = 2000
 
 PACKAGE_ROOT = Path(__file__).resolve().parent.parent
-SAMPLES_DIR = PACKAGE_ROOT / "samples"
+SAMPLES_DIR = PACKAGE_ROOT / "archive"/ "samples"

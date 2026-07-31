@@ -5,7 +5,7 @@ import tiktoken
 from langchain.chat_models import init_chat_model
 from langchain_openai import OpenAIEmbeddings
 
-from genai_lab.dialog.env_setup import init
+from genai_lab.archive.dialog.env_setup import init
 
 init()
 

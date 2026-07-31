@@ -5,8 +5,8 @@ from dataclasses import dataclass
 from functools import wraps
 from typing import Callable
 
-from genai_lab.config import config
-from genai_lab.config.messages import *
+from genai_lab.archive.config import config
+from genai_lab.archive.config.messages import *
 
 
 def clean_text(text: str, max_len: int) -> str:

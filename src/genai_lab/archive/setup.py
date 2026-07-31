@@ -4,7 +4,7 @@ from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 from openai.types.responses import ResponseOutputMessage, ResponseOutputText
 
-from genai_lab.config import config
+from genai_lab.archive.config import config
 
 _ = load_dotenv(find_dotenv())  # read local .env file
 client = OpenAI()

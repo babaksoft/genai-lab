@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from llama_index.llms.openai import OpenAI
 from llama_index.core.agent.workflow import FunctionAgent
 
-from genai_lab.planner.planner_tools import (
+from genai_lab.archive.planner.planner_tools import (
     all_tasks,
     task_by_id,
     tasks_by_priority,

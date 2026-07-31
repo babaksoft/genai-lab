@@ -2,9 +2,9 @@
 
 from textwrap import wrap
 
-from genai_lab.config import config
-from genai_lab.config.samples import *
-from genai_lab.core.assistant import Assistant
+from genai_lab.archive.config import config
+from genai_lab.archive.config.samples import *
+from genai_lab.archive.core.assistant import Assistant
 
 assistant = Assistant(debug=True)
 

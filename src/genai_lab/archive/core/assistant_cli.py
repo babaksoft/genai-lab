@@ -7,7 +7,7 @@ from os import PathLike
 
 import click
 
-from genai_lab.core.assistant import Assistant
+from genai_lab.archive.core.assistant import Assistant
 
 assistant = Assistant()
 
