@@ -36,6 +36,7 @@ dependencies = [
     "llama-index-llms-openai",
     "llama-index-utils-workflow",
     "llama-index-vector-stores-postgres",
+    "llama-index-workflows",
     "ollama",
     "openai",
     "openinference-instrumentation-llama-index",
